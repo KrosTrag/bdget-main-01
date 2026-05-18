@@ -53,15 +53,6 @@ jobs:
       - name: Build Maven
         run: ./mvnw clean install -DskipTests
 
-      # 6. SonarCloud
-      - name: Analyze with SonarCloud
-        run: >
-          ./mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121:sonar
-            -Dsonar.projectKey=KrosTrag_bdget-main-01
-            -Dsonar.organization=krostrag
-            -Dsonar.host.url=https://sonarcloud.io
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-
       # 7. Instalar Snyk
       - name: Install Snyk
         run: npm install -g snyk
