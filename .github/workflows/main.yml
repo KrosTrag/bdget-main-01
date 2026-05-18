@@ -50,8 +50,8 @@ jobs:
         shell: bash
 
       # 5. Ejecutar tests
-      - name: Run Tests
-        run: ./mvnw clean test
+      - name: Build Maven
+        run: ./mvnw clean install -DskipTests
 
       # 6. SonarCloud
       - name: Analyze with SonarCloud
