@@ -55,11 +55,12 @@ jobs:
 
       # 6. SonarCloud
       - name: Analyze with SonarCloud
-        run: ./mvnw verify sonar:sonar \
-          -Dsonar.projectKey=KrosTrag_bdget-main \
-          -Dsonar.organization=krostrag \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+        run:
+          ./mvnw sonar:sonar \
+            -Dsonar.projectKey=KrosTrag_bdget-main-01 \
+            -Dsonar.organization=krostrag \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
       # 7. Instalar Snyk
       - name: Install Snyk
